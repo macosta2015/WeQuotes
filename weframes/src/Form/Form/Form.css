@@ -8,6 +8,12 @@
 
   .custom-box {
     background-color: #eee; 
-    padding-top: 500px; /* Add top padding */
+    padding-top: .5%; /* Add top padding */
   }
 
+  .centered-text {
+    text-align: center; /* Center the text horizontally */
+    justify-content: center; /* Center the text vertically */
+    display: flex;
+    align-items: center;
+  }
