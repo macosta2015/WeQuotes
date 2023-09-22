@@ -1,8 +1,8 @@
 import React, { createContext, useContext } from 'react';
-import Form from './Form/Form';
 import MediaCard from './Form/MediaCard/MediaCard';
 import Card from './Form/Card/Card';
 import Header from './Form/Header/Header';
+import Form from './Form/Form/Form';
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <header className="App-header">
           <Header/>
           <Form />
-          <Card/>
-          <MediaCard/>
+          {/* <Card/> */}
+          {/* <MediaCard/> */}
       </header>
     </div>
   );
