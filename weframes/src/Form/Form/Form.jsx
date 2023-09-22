@@ -9,6 +9,7 @@ import { exportFormData } from './dataExport'; // Import the exportFormData func
 
 
 const Form = () => {
+  const initialFormData = { name: '', email: '', message: '' };
   const [formData, setFormData] = useState({name: "",email: "",message: ""});
 
 
@@ -28,6 +29,9 @@ const Form = () => {
     
         // Call the exportFormData function to export the data
         exportFormData(formData);
+
+        // Reset the form data to its initial state
+        setFormData(initialFormData);
   };
 
   //Code for the Grid
@@ -40,7 +44,6 @@ const Form = () => {
   })
 
   );
-
 
   return (
     <Box className="custom-box" sx={{ flexGrow: 1 }}>
