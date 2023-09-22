@@ -5,6 +5,8 @@ import Paper from '@mui/material/Paper';
 import './Form.css';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import { exportFormData } from './dataExport'; // Import the exportFormData function
+
 
 const Form = () => {
   const [formData, setFormData] = useState({name: "",email: "",message: ""});
@@ -12,13 +14,20 @@ const Form = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    if (!formData.isSubmitted) {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
     );
+        // Set a flag to indicate that the form has been submitted
+        setFormData({ ...formData, isSubmitted: true });
+    
+        // Call the exportFormData function to export the data
+        exportFormData(formData);
   };
 
   //Code for the Grid
@@ -62,8 +71,6 @@ const Form = () => {
       </Grid>
     </Box>
   );
-
-
 };
 
 export default Form;
