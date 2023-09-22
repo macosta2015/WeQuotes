@@ -55,7 +55,8 @@ const Form = () => {
           Input the needed data to get a Quote
         </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={9}>
+        {/* <Grid item xs={12}> */}
           <form className="centered-text" onSubmit={handleSubmit}>
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
@@ -66,6 +67,13 @@ const Form = () => {
             <button type="submit">Submit</button>
           </form>
         </Grid>
+        <Grid item xs={1}>
+          <div className="image-container">
+            <img
+                  src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+            />
+          </div>
+        </Grid>
         <Grid item xs={12}>
           {/* <Item>xs=12</Item> */}
           <div className="image-container">
@@ -74,7 +82,7 @@ const Form = () => {
               alt="Image"
               className="responsive-image"
             />
-</div>
+          </div>
         </Grid>
         <Grid item xs={8}>
           <Item>xs=8</Item>
