@@ -9,11 +9,23 @@
   .custom-box {
     background-color: #eee; 
     padding-top: .5%; /* Add top padding */
+    text-align: center; /* Center the text horizontally */
+    justify-content: center; /* Center the text vertically */
   }
 
   .centered-text {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center horizontally */
     text-align: center; /* Center the text horizontally */
     justify-content: center; /* Center the text vertically */
     display: flex;
     align-items: center;
   }
+
+  .form-field {
+    margin-bottom: 20px; /* Adjust the margin to control vertical spacing between fields */
+    display: flex;
+    flex-direction: column;
+  }
+  
