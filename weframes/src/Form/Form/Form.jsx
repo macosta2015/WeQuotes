@@ -51,7 +51,7 @@ const Form = () => {
       {/* Grid spacing is the space columns distance */}
         <Grid item xs={12}>
         <Typography variant="h4" className="centered-text">
-          Fill out the Form
+          Input the needed data to get a Quote
         </Typography>
         </Grid>
         <Grid item xs={12}>
@@ -65,12 +65,12 @@ const Form = () => {
             <button type="submit">Submit</button>
           </form>
         </Grid>
-        <Grid item xs={6}>
+        {/* <Grid item xs={6}>
           <Item>xs=6</Item>
         </Grid>
         <Grid item xs={8}>
           <Item>xs=8</Item>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Box>
   );

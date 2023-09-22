@@ -9,6 +9,7 @@
   .custom-box {
     background-color: #eee; 
     padding-top: .5%; /* Add top padding */
+    padding-bottom: .5%;
     text-align: center; /* Center the text horizontally */
     justify-content: center; /* Center the text vertically */
   }
