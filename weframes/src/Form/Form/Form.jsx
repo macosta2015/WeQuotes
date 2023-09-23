@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
+import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import './Form.css';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { exportFormData } from './dataExport'; // Import the exportFormData function
-import Image from 'material-ui-image';
+import { useMediaQuery } from '@mui/material'; // Import useMediaQuery
 
+// Define your theme
+const theme = createTheme();
 
 const Form = () => {
   const initialFormData = { name: '', email: '', message: '' };
-  const [formData, setFormData] = useState({name: "",email: "",message: ""});
-
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,18 +22,20 @@ const Form = () => {
     }
   };
 
+  // Add the useMediaQuery hook to check for screen size
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
-    );
-        // Set a flag to indicate that the form has been submitted
-        setFormData({ ...formData, isSubmitted: true });
-    
-        // Call the exportFormData function to export the data
-        exportFormData(formData);
+    alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`);
+    // Set a flag to indicate that the form has been submitted
+    setFormData({ ...formData, isSubmitted: true });
 
-        // Reset the form data to its initial state
-        setFormData(initialFormData);
+    // Call the exportFormData function to export the data
+    exportFormData(formData);
+
+    // Reset the form data to its initial state
+    setFormData(initialFormData);
   };
 
   //Code for the Grid
@@ -41,22 +44,19 @@ const Form = () => {
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'center',
-    color: theme.palette.text.secondary
-  })
-
-  );
+    color: theme.palette.text.secondary,
+  }));
 
   return (
     <Box className="custom-box" sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}> 
-      {/* Grid spacing is the space columns distance */}
+      <Grid container spacing={2}>
+        {/* Grid spacing is the space columns distance */}
         <Grid item xs={12}>
-        <Typography variant="h4" className="centered-text">
-          Input the needed data to get a Quote
-        </Typography>
+          <Typography variant="h4" className="centered-text">
+            Input the needed data to get a Quote
+          </Typography>
         </Grid>
-        <Grid item xs={9}>
-        {/* <Grid item xs={12}> */}
+        <Grid item xs={9} sm={10} md={7} lg={7} xl={7}>
           <form className="centered-text" onSubmit={handleSubmit}>
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
@@ -67,15 +67,7 @@ const Form = () => {
             <button type="submit">Submit</button>
           </form>
         </Grid>
-        <Grid item xs={1}>
-          <div className="image-container">
-            <img
-                  src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-            />
-          </div>
-        </Grid>
-        <Grid item xs={12}>
-          {/* <Item>xs=12</Item> */}
+        <Grid item xs={1} sm={2} md={1} lg={0} xl={0} style={{ display: isSmallScreen ? 'none' : 'block' }}>
           <div className="image-container">
             <img
               src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
@@ -83,9 +75,6 @@ const Form = () => {
               className="responsive-image"
             />
           </div>
-        </Grid>
-        <Grid item xs={8}>
-          <Item>xs=8</Item>
         </Grid>
       </Grid>
     </Box>
