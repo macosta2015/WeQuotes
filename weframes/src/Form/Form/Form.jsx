@@ -24,6 +24,8 @@ const Form = () => {
 
   // Add the useMediaQuery hook to check for screen size
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -50,13 +52,12 @@ const Form = () => {
   return (
     <Box className="custom-box" sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        {/* Grid spacing is the space columns distance */}
         <Grid item xs={12}>
           <Typography variant="h4" className="centered-text">
             Input the needed data to get a Quote
           </Typography>
         </Grid>
-        <Grid item xs={9} sm={10} md={7} lg={7} xl={7}>
+        <Grid item xs={12} sm={12} md={9} lg={7} xl={7}>
           <form className="centered-text" onSubmit={handleSubmit}>
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
@@ -67,12 +68,11 @@ const Form = () => {
             <button type="submit">Submit</button>
           </form>
         </Grid>
-        <Grid item xs={1} sm={2} md={1} lg={0} xl={0} style={{ display: isSmallScreen ? 'none' : 'block' }}>
+        <Grid item xs={1} sm={2} md={1} lg={0} xl={1} style={{ display: isSmallScreen || isMediumScreen ? 'none' : 'block' }}>
           <div className="image-container">
             <img
               src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
               alt="Image"
-              className="responsive-image"
             />
           </div>
         </Grid>
