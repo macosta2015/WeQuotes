@@ -8,8 +8,8 @@ import Box from '@mui/material/Box';
 import { exportFormData } from './dataExport'; // Import the exportFormData function
 import { useMediaQuery } from '@mui/material'; // Import useMediaQuery
 
-// Define your theme
-const theme = createTheme();
+// Define your theme 
+const theme = createTheme(); //Keep understanding 
 
 const Form = () => {
   const initialFormData = { name: '', email: '', message: '' };
