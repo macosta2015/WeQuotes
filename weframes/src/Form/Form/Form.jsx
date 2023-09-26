@@ -7,13 +7,14 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { exportFormData } from './dataExport'; // Import the exportFormData function
 import { useMediaQuery } from '@mui/material'; // Import useMediaQuery
+import { useFormData } from '../../FormDataContext'; // Import the context hook
 
-// Define your theme 
-const theme = createTheme(); //Keep understanding 
+// Define your theme
+const theme = createTheme();
 
 const Form = () => {
+  const { formData, setFormData } = useFormData(); // Use the useFormData hook
   const initialFormData = { name: '', email: '', message: '' };
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +26,6 @@ const Form = () => {
   // Add the useMediaQuery hook to check for screen size
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
