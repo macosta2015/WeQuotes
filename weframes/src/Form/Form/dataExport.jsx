@@ -15,7 +15,7 @@ const message='Mario'
 const reply_to='Mario'
 
 export const exportFormData = (formData) => {
-  console.log('Are we running!');
+  console.log('Before sending email!');
   console.log('Form data exported:', formData);
   console.log(formData.name);
 
@@ -30,9 +30,5 @@ export const exportFormData = (formData) => {
           console.log(error.text);
       });
   };
-  console.log('After running!');
-
-
-
-
+  console.log('After sending email!');
 };
