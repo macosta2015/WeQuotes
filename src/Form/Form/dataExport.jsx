@@ -40,7 +40,8 @@ export const exportFormData = (formData) => {
 
   return (
     <div>
-      <ExportForm />
+      {console.log('Before rendering!')}
+        <ExportForm />
       {console.log('After rendering!')}
     </div>
     
