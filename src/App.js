@@ -5,6 +5,8 @@ import Header from './Form/Header/Header';
 import Form from './Form/Form/Form';
 import { FormDataProvider } from './FormDataContext'; // Import the FormDataProvider
 import DisplayData from './Form/Emailoutput/Emailoutput';
+// require('dotenv').config();
+
 
 function App() {
   return (
