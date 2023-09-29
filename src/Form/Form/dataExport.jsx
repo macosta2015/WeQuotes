@@ -17,8 +17,8 @@ export const exportFormData = (formData) => {
   console.log('form.email', form.email)
   console.log('form.message', form.message)
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
 
     emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form, YOUR_PUBLIC_KEY)
       .then((result) => {
@@ -26,7 +26,7 @@ export const exportFormData = (formData) => {
       }, (error) => {
         console.log(error.text);
       });
-  };
+  // };
 
   console.log('Hello sendemail');
 
