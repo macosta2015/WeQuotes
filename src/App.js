@@ -6,6 +6,7 @@ import Form from './Form/Form/Form';
 import { FormDataProvider } from './FormDataContext'; // Import the FormDataProvider
 import DisplayData from './Form/Emailoutput/Emailoutput';
 
+
 function App() {
   return (
     <div className="App">

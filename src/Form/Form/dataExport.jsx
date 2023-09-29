@@ -1,20 +1,27 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
-const ExportForm = () => {
-  console.log('Are we running? Inside ExportForm');
+const YOUR_SERVICE_ID = 'service_v156l77';
+const YOUR_TEMPLATE_ID = 'template_qk6izxf';
+const YOUR_PUBLIC_KEY = 'template_qk6izxf';
 
+const ExportForm = () => {
   const form = useRef();
+  console.log('INSIDE THE EXPORTFORM')
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
+    emailjs
+      .sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, YOUR_PUBLIC_KEY)
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -35,14 +42,11 @@ export const exportFormData = (formData) => {
   console.log('Form data exported:', formData);
   console.log(formData.name);
 
-  // Render the ExportForm component here
-
-
   return (
     <div>
+      {console.log('Before rendering!')}
       <ExportForm />
       {console.log('After rendering!')}
     </div>
-    
   );
 };
