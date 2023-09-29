@@ -17,10 +17,17 @@ export const exportFormData = (formData) => {
   console.log('form.email', form.email)
   console.log('form.message', form.message)
 
+
+  var templateParams = {
+    from_name: 'James',
+    to_name: 'Check this out!',
+    message: 'Hello World'
+};
+
   // const sendEmail = (e) => {
   //   e.preventDefault();
 
-    emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form, YOUR_PUBLIC_KEY)
+    emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, templateParams, YOUR_PUBLIC_KEY)
       .then((result) => {
         console.log(result.text);
       }, (error) => {
