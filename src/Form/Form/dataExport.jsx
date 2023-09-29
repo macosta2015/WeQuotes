@@ -1,15 +1,26 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import emailjs from '@emailjs/browser';
 
-const ExportForm = () => {
-  console.log('Are we running? Inside ExportForm');
+const YOUR_SERVICE_ID = 'service_v156l77';
+const YOUR_TEMPLATE_ID = 'template_qk6izxf';
+const YOUR_PUBLIC_KEY = 'template_qk6izxf';
 
-  const form = useRef();
+export const exportFormData = (formData) => {
+  console.log('Are we running!');
+  console.log('Form data exported:', formData);
+
+  // Assign formData to form
+  const form = formData;
+
+  console.log('form', form)
+  console.log('form.name', form.name)
+  console.log('form.email', form.email)
+  console.log('form.message', form.message)
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form, YOUR_PUBLIC_KEY)
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -17,33 +28,12 @@ const ExportForm = () => {
       });
   };
 
-  return (
-    <form ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
-      <input type="text" name="user_name" />
-      <label>Email</label>
-      <input type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" />
-      <input type="submit" value="Send" />
-    </form>
-  );
-};
-
-export const exportFormData = (formData) => {
-  console.log('Are we running!');
-  console.log('Form data exported:', formData);
-  console.log(formData.name);
-
-  // Render the ExportForm component here
-
+  console.log('Hello sendemail');
 
   return (
     <div>
       {console.log('Before rendering!')}
-        <ExportForm />
       {console.log('After rendering!')}
     </div>
-    
   );
 };
