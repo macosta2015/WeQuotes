@@ -14,9 +14,9 @@ function App() {
       <header className="App-header">
         <Header />
         <Form />
-        {/* <Card/> */}
-        {/* <MediaCard/> */}
-        <DisplayData/>
+        {/* <Card /> */}
+        {/* <MediaCard /> */}
+        {/* <DisplayData/> */}
       </header>
     </div>
   );
