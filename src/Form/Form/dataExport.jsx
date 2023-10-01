@@ -14,17 +14,8 @@ export const exportFormData = async (formData) => {
   const form = formData;
 
   await emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form, YOUR_PUBLIC_KEY)
-  // .then((result) => {
-  //   console.log(result.text);
-  // }, (error) => {
-  //   console.log(error.text);
-  // });
-
 
   console.log('Hello sendemail');
 
-  // return (
-  //   <div>
-  //   </div>
-  // );
+
 };
