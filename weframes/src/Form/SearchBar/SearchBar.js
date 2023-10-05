@@ -1,3 +1,4 @@
+// SearchBar.js
 import React, { useState } from 'react';
 
 function SearchBar({ onSearch }) {
@@ -8,12 +9,7 @@ function SearchBar({ onSearch }) {
     };
 
     const handleSearch = () => {
-        // You can perform a search operation or pass the search term to a parent component or function.
-        // For now, let's just log the search term to the console.
-        console.log(`Searching for: ${searchTerm}`);
-        if (onSearch) {
-            onSearch(searchTerm);
-        }
+        onSearch(searchTerm);
     };
 
     return (

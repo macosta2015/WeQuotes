@@ -6,6 +6,8 @@ import Form from './Form/Form/Form';
 import { FormDataProvider } from './FormDataContext'; // Import the FormDataProvider
 import DisplayData from './Form/Emailoutput/Emailoutput';
 import SearchBar from './Form/SearchBar/SearchBar';
+import Data from './Form/SearchBar/Data';
+
 
 function App() {
 
