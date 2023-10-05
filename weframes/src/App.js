@@ -20,9 +20,9 @@ function App() {
         <Form />
         {/* <Card/> */}
         {/* <MediaCard/> */}
-        <DisplayData />
-        <SearchBar />
-      </header>
+        {/* <DisplayData /> */}
+        <h1>Search App</h1>
+        <SearchBar onSearch={handleSearch} />      </header>
     </div>
   );
 }
