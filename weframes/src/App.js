@@ -11,17 +11,19 @@ import SearchResults from './Form/SearchBar/SearchResults';
 
 
 function App() {
-
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = (searchTerm) => {
-    // Filter data based on the search term
+    // Filter data based on whether the search term appears in the title or description
     const filteredResults = Data.filter((item) =>
-      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     setSearchResults(filteredResults);
   };
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -32,7 +34,8 @@ function App() {
         {/* <DisplayData /> */}
         <h1>Search App</h1>
         <SearchBar onSearch={handleSearch} />
-        <SearchResults results={searchResults} />      </header>
+        <SearchResults results={searchResults} />
+      </header>
     </div>
   );
 }
