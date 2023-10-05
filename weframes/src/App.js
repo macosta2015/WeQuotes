@@ -5,8 +5,14 @@ import Header from './Form/Header/Header';
 import Form from './Form/Form/Form';
 import { FormDataProvider } from './FormDataContext'; // Import the FormDataProvider
 import DisplayData from './Form/Emailoutput/Emailoutput';
+import SearchBar from './Form/SearchBar/SearchBar';
 
 function App() {
+
+  const handleSearch = (searchTerm) => { // Implement your search logic here.
+    console.log(`Searching for: ${searchTerm}`);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,7 +20,8 @@ function App() {
         <Form />
         {/* <Card/> */}
         {/* <MediaCard/> */}
-        <DisplayData/>
+        <DisplayData />
+        <SearchBar />
       </header>
     </div>
   );
