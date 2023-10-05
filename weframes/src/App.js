@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import MediaCard from './Form/MediaCard/MediaCard';
 import Card from './Form/Card/Card';
 import Header from './Form/Header/Header';
@@ -7,14 +7,21 @@ import { FormDataProvider } from './FormDataContext'; // Import the FormDataProv
 import DisplayData from './Form/Emailoutput/Emailoutput';
 import SearchBar from './Form/SearchBar/SearchBar';
 import Data from './Form/SearchBar/Data';
+import SearchResults from './Form/SearchBar/SearchResults';
 
 
 function App() {
 
-  const handleSearch = (searchTerm) => { // Implement your search logic here.
-    console.log(`Searching for: ${searchTerm}`);
-  };
+  const [searchResults, setSearchResults] = useState([]);
 
+  const handleSearch = (searchTerm) => {
+    // Filter data based on the search term
+    const filteredResults = Data.filter((item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setSearchResults(filteredResults);
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +31,8 @@ function App() {
         {/* <MediaCard/> */}
         {/* <DisplayData /> */}
         <h1>Search App</h1>
-        <SearchBar onSearch={handleSearch} />      </header>
+        <SearchBar onSearch={handleSearch} />
+        <SearchResults results={searchResults} />      </header>
     </div>
   );
 }
