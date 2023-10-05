@@ -8,7 +8,8 @@ function SearchResults({ results }) {
             <ul>
                 {results.map((item) => (
                     <li key={item.id}>
-                        <strong>{item.title}:</strong> {item.description}
+                        <strong>{item.title}:
+                        </strong> {item.description}
                     </li>
                 ))}
             </ul>
