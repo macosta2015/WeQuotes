@@ -28,12 +28,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Header />
+        <SearchBar onSearch={handleSearch} />
         <Form />
         {/* <Card/> */}
         {/* <MediaCard/> */}
         {/* <DisplayData /> */}
         <h1>Search App</h1>
-        <SearchBar onSearch={handleSearch} />
         <SearchResults results={searchResults} />
       </header>
     </div>
