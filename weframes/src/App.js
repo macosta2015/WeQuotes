@@ -11,6 +11,7 @@ import SearchResults from './Form/SearchBar/SearchResults';
 
 
 function App() {
+  console.log('Hello World')
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = (searchTerm) => {
