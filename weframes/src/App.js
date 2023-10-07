@@ -11,6 +11,7 @@ import SearchResults from './Form/SearchBar/SearchResults';
 
 
 function App() {
+  console.log('Hello')
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = (searchTerm) => {
@@ -22,7 +23,6 @@ function App() {
 
     setSearchResults(filteredResults);
   };
-
 
   return (
     <div className="App">
