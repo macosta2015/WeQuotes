@@ -15,7 +15,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = (searchTerm) => {
-    console.log('Hello')
+    console.log('Hello World')
     // Filter data based on whether the search term appears in the title or description
     const filteredResults = Data.filter((item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
