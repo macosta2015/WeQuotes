@@ -31,7 +31,7 @@ function App() {
       <header className="App-header">
         <Header />
         <Form />
-        {/* <Card/> */}
+        <Card />
         {/* <MediaCard/> */}
         {/* <DisplayData /> */}
         <h1>Search App</h1>
